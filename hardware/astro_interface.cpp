@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "astro_hardware/astro_interface.hpp"
+#include "astro_hardware_interface/astro_interface.hpp"
 
 #include <chrono>
 #include <cmath>

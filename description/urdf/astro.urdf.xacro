@@ -3,13 +3,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="astro">
   <xacro:arg name="prefix" default="" />
 
-  <xacro:include filename="$(find astro_hardware)/urdf/astro_description.urdf.xacro" />
+  <xacro:include filename="$(find astro_hardware_interface)/urdf/astro_description.urdf.xacro" />
 
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find astro_hardware)/urdf/astro.materials.xacro" />
+  <xacro:include filename="$(find astro_hardware_interface)/urdf/astro.materials.xacro" />
 
   <!-- Import astro ros2_control description -->
-  <xacro:include filename="$(find astro_hardware)/ros2_control/astro.ros2_control.xacro" />
+  <xacro:include filename="$(find astro_hardware_interface)/ros2_control/astro.ros2_control.xacro" />
 
   <xacro:astro prefix="$(arg prefix)" />
 

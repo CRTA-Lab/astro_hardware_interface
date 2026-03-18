@@ -28,7 +28,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("astro_hardware"), "urdf", "astro.urdf.xacro"]
+                [FindPackageShare("astro_hardware_interface"), "urdf", "astro.urdf.xacro"]
             ),
         ]
     )
@@ -36,13 +36,13 @@ def generate_launch_description():
 
     robot_controllers = PathJoinSubstitution(
         [
-            FindPackageShare("astro_hardware"),
+            FindPackageShare("astro_hardware_interface"),
             "config",
             "astro_controllers.yaml",
         ]
     )
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("astro_hardware"), "rviz", "astro.rviz"]
+        [FindPackageShare("astro_hardware_interface"), "rviz", "astro.rviz"]
     )
 
     control_node = Node(

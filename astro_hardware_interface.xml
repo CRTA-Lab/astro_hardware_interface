@@ -1,5 +1,5 @@
-<library path="astro_hardware">
-  <class name="astro_hardware/AstroHardware"
+<library path="astro_hardware_interface">
+  <class name="astro_hardware_interface/AstroHardware"
          type="astro_hardware::AstroHardware"
          base_class_type="hardware_interface::SystemInterface">
     <description>

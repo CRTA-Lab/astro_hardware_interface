@@ -19,38 +19,38 @@
  * library cannot have, but the consuming code must have inorder to link.
  */
 
-#ifndef ASTRO_HARDWARE__VISIBILITY_CONTROL_H_
-#define ASTRO_HARDWARE__VISIBILITY_CONTROL_H_
+#ifndef ASTRO_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
+#define ASTRO_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
 
 // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
 //     https://gcc.gnu.org/wiki/Visibility
 
 #if defined _WIN32 || defined __CYGWIN__
 #ifdef __GNUC__
-#define ASTRO_HARDWARE_EXPORT __attribute__((dllexport))
-#define ASTRO_HARDWARE_IMPORT __attribute__((dllimport))
+#define ASTRO_HARDWARE_INTERFACE_EXPORT __attribute__((dllexport))
+#define ASTRO_HARDWARE_INTERFACE_IMPORT __attribute__((dllimport))
 #else
-#define ASTRO_HARDWARE_EXPORT __declspec(dllexport)
-#define ASTRO_HARDWARE_IMPORT __declspec(dllimport)
+#define ASTRO_HARDWARE_INTERFACE_EXPORT __declspec(dllexport)
+#define ASTRO_HARDWARE_INTERFACE_IMPORT __declspec(dllimport)
 #endif
-#ifdef ASTRO_HARDWARE_BUILDING_DLL
-#define ASTRO_HARDWARE_PUBLIC ASTRO_HARDWARE_EXPORT
+#ifdef ASTRO_HARDWARE_INTERFACE_BUILDING_DLL
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC ASTRO_HARDWARE_INTERFACE_EXPORT
 #else
-#define ASTRO_HARDWARE_PUBLIC ASTRO_HARDWARE_IMPORT
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC ASTRO_HARDWARE_INTERFACE_IMPORT
 #endif
-#define ASTRO_HARDWARE_PUBLIC_TYPE ASTRO_HARDWARE_PUBLIC
-#define ASTRO_HARDWARE_LOCAL
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC_TYPE ASTRO_HARDWARE_INTERFACE_PUBLIC
+#define ASTRO_HARDWARE_INTERFACE_LOCAL
 #else
-#define ASTRO_HARDWARE_EXPORT __attribute__((visibility("default")))
-#define ASTRO_HARDWARE_IMPORT
+#define ASTRO_HARDWARE_INTERFACE_EXPORT __attribute__((visibility("default")))
+#define ASTRO_HARDWARE_INTERFACE_IMPORT
 #if __GNUC__ >= 4
-#define ASTRO_HARDWARE_PUBLIC __attribute__((visibility("default")))
-#define ASTRO_HARDWARE_LOCAL __attribute__((visibility("hidden")))
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC __attribute__((visibility("default")))
+#define ASTRO_HARDWARE_INTERFACE_LOCAL __attribute__((visibility("hidden")))
 #else
-#define ASTRO_HARDWARE_PUBLIC
-#define ASTRO_HARDWARE_LOCAL
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC
+#define ASTRO_HARDWARE_INTERFACE_LOCAL
 #endif
-#define ASTRO_HARDWARE_PUBLIC_TYPE
+#define ASTRO_HARDWARE_INTERFACE_PUBLIC_TYPE
 #endif
 
-#endif  // ASTRO_HARDWARE__VISIBILITY_CONTROL_H_
+#endif  // ASTRO_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
